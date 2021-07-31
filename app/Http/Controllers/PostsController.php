@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class PostsController extends Controller
 {
@@ -14,7 +15,8 @@ class PostsController extends Controller
 
     public function index(){
         $list = \DB::table('posts')->get();
-        return view('posts.index',['list'=>$list]);
+        $username = Auth::user()->username; //0731追記
+        return view('posts.index',['list'=>$list, 'username'=>$username]); //0731追記
     }
 
 }

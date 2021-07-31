@@ -27,7 +27,7 @@
                 <div id="">
                     <p>
                     <!-- 7/26追記 -->
-                    {{ Auth::user()->name }} さん<img src="images/arrow.png"></p>
+                    {{ $username }} さん<img src="images/arrow.png"></p>
                 <div>
                 <ul>
                     <li><a href="/top">ホーム</a></li>
@@ -43,7 +43,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{ $username }}さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>

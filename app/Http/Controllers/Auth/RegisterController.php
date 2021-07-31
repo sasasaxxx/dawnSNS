@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 
+use Auth; //0731追記
+
 class RegisterController extends Controller
 {
     /*
@@ -70,11 +72,6 @@ class RegisterController extends Controller
         ]);
     }
 
-
-    // public function registerForm(){
-    //     return view("auth.register");
-    // }
-
     public function register(Request $request){
         if($request->isMethod('post')){
             $data = $request->input();
@@ -88,4 +85,5 @@ class RegisterController extends Controller
     public function added(){
         return view('auth.added');
     }
+
 }
